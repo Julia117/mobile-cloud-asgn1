@@ -21,7 +21,7 @@ import javax.servlet.MultipartConfigElement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.embedded.MultiPartConfigFactory;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -52,7 +52,7 @@ public class Application {
 	@Bean
     public MultipartConfigElement multipartConfigElement() {
 		// Setup the application container to be accept multipart requests
-		final MultiPartConfigFactory factory = new MultiPartConfigFactory();
+		final MultipartConfigFactory factory = new MultipartConfigFactory();
 		// Place upper bounds on the size of the requests to ensure that
 		// clients don't abuse the web container by sending huge requests
 		factory.setMaxFileSize(MAX_REQUEST_SIZE);
